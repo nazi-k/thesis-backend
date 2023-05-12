@@ -15,11 +15,11 @@ tags_metadata = [
         "description": "Get authentication token",
     },
     {
-        "name": "Users",
+        "name": "User",
         "description": "User registration and management",
     },
     {
-        "name": "Projects",
+        "name": "Project",
         "description": "Get project information",
     },
 ]

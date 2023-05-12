@@ -1,12 +1,16 @@
+import base64
 from datetime import datetime
 from typing import Self
 
+import httpx
 from beanie import Document, PydanticObjectId, Link, before_event, Replace, Update, Indexed
 from pydantic import Field, EmailStr, HttpUrl
 
-from core import verify_password
+from core import verify_password, settings
 
 import typing
+
+from utils import imgbb
 
 if typing.TYPE_CHECKING:
     from .comment import Comment
@@ -54,6 +58,11 @@ class User(Document):
             return None
         return user
 
+    async def change_photo(self, *, avatar_file: bytes):
+        file_data_base64 = base64.b64encode(avatar_file).decode('utf-8')
+        photo_url = await imgbb.upload(file_data_base64)
+        self.avatarUrl = photo_url
+        await self.save()
 
 from .comment import Comment
 from .issue import Issue

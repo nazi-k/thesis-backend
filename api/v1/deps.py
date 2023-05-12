@@ -14,7 +14,7 @@ from models.user import User
 
 
 oauth2_scheme = OAuth2PasswordBearer(
-    tokenUrl="/authentication/login",
+    tokenUrl=f"api/{settings.API_V1_STR}/authentication/login",
     auto_error=False,
 )
 

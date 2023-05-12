@@ -37,6 +37,8 @@ class Settings(BaseSettings):
     # Authentication
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 1  # 60 minutes * 24 hours * 1 = 1 day
 
+    IMGBB_API_KEY = "4e67c049645d3d2bf6344626f0ecb4c3"
+
     class Config:
         # Place your .env file under this path
         env_file = "shortify/.env"
