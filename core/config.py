@@ -13,8 +13,8 @@ class Settings(BaseSettings):
     PROJECT_VERSION: str = "0.0.1"
     API_V1_STR: str = "v1"
     DEBUG: bool = True
-    BACKEND_CORS_ORIGINS: Union[str, List[AnyHttpUrl]] = ["*"]
-    SECRET_KEY: str = secrets.token_urlsafe(32)
+    BACKEND_CORS_ORIGINS: Union[str, List[AnyHttpUrl]] = ["http://localhost:8080"]
+    SECRET_KEY: str = "fd"  # secrets.token_urlsafe(32)
 
     # Custom validators that have 'pre' set to 'True', will be called before
     # all standard pydantic validators.
