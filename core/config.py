@@ -15,6 +15,8 @@ class Settings(BaseSettings):
     DEBUG: bool = True
     BACKEND_CORS_ORIGINS: Union[str, List[AnyHttpUrl]] = ["http://localhost:8080"]
     SECRET_KEY: str = "fd"  # secrets.token_urlsafe(32)
+    PORT: int = 8000
+    HOST: str = "0.0.0.0"
 
     # Custom validators that have 'pre' set to 'True', will be called before
     # all standard pydantic validators.
